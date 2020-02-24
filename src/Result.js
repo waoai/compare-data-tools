@@ -6,13 +6,16 @@ import Box from "@material-ui/core/Box"
 import Button from "@material-ui/core/Button"
 import { GoMarkGithub } from "react-icons/go"
 import OpenInNewIcon from "@material-ui/icons/OpenInNew"
+import Divider from "@material-ui/core/Divider"
 
 const Container = styled("div")({
   display: "flex",
   maxWidth: 800,
   width: "100%",
   margin: 20,
-  border: `1px solid ${colors.grey[300]}`
+  border: `1px solid ${colors.grey[400]}`,
+  boxShadow: "0px 3px 5px rgba(0,0,0,0.1)",
+  borderRadius: 4
 })
 
 const LeftBlock = styled("div")({
@@ -20,16 +23,8 @@ const LeftBlock = styled("div")({
   padding: 16
 })
 
-const MiddleBlock = styled("div")({
-  flexGrow: 1
-})
-
 const RightBlock = styled("div")({
-  display: "flex",
-  flexDirection: "column",
-  width: "100%",
-  maxWidth: 200,
-  padding: 8
+  flexGrow: 1
 })
 
 const Title = styled("div")({
@@ -39,7 +34,12 @@ const Title = styled("div")({
 })
 
 const TagContainer = styled("div")({
-  paddingTop: 32,
+  paddingTop: 16,
+  paddingBottom: 16
+})
+
+const DescriptionContainer = styled("div")({
+  paddingTop: 16,
   paddingBottom: 16
 })
 
@@ -68,6 +68,7 @@ export default ({
   xml,
   json,
   csv,
+  description,
   supportsNER,
   supportsVideo,
   supportsImageURLs,
@@ -80,7 +81,6 @@ export default ({
     isLibrary && { label: "library", color: colors.orange[600] },
     isOpenSource && { label: "open-source", color: colors.green[500] }
   ].filter(Boolean)
-  console.log({ tags })
   return (
     <Container>
       <LeftBlock>
@@ -90,10 +90,9 @@ export default ({
             <Tag style={{ backgroundColor: color }}>{label}</Tag>
           ))}
         </TagContainer>
-      </LeftBlock>
-      <MiddleBlock>asd</MiddleBlock>
-      <RightBlock>
-        <Box flexGrow={1} />
+        <Divider />
+        <DescriptionContainer>{description}</DescriptionContainer>
+        <Divider style={{ marginBottom: 16 }} />
         {useLink && (
           <Button
             fullWidth
@@ -128,7 +127,8 @@ export default ({
             {title}
           </Button>
         )}
-      </RightBlock>
+      </LeftBlock>
+      <RightBlock>asd</RightBlock>
     </Container>
   )
 }

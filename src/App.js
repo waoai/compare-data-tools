@@ -64,6 +64,7 @@ export default () => {
           xml={false}
           json
           csv
+          description={`Label any type of data, images, text, or documents, in an easy web interface or desktop app.`}
           supportsNER
           supportsVideo={false}
           supportsImageURLs
@@ -71,6 +72,7 @@ export default () => {
         />
         <Result
           title="Label Box"
+          description={`A complete solution for your training data problem with fast labeling tools, human workforce, data management, a powerful API and automation features.`}
           useLink="https://labelbox.com"
           githubLink="https://github.com/UniversalDataTool/universal-data-tool"
           isCloud
