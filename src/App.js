@@ -4,6 +4,7 @@ import { styled, makeStyles } from "@material-ui/core/styles"
 import * as colors from "@material-ui/core/colors"
 import Selector from "./Selector"
 import Result from "./Result"
+import data from "./data.yaml"
 
 const Header = styled("div")({
   fontSize: 32,
@@ -13,7 +14,13 @@ const Header = styled("div")({
   textAlign: "center",
   color: "#fff",
   textShadow: "0px 2px 5px rgba(0,0,0,0.2)",
-  backgroundColor: colors.blue[500]
+  backgroundColor: colors.blue[500],
+  "& .sub": {
+    marginTop: 20,
+    fontWeight: "normal",
+    textShadow: "0px 2px 5px rgba(0,0,0,0.1)",
+    fontSize: 18
+  }
 })
 
 const SearchContainer = styled("div")({
@@ -37,7 +44,13 @@ const ResultsContainer = styled("div")({
 export default () => {
   return (
     <div>
-      <Header>Compare Data Tools</Header>
+      <Header>
+        Compare Data Tools
+        <div className="sub">
+          Find the best tools for working with datasets for machine learning and
+          artificial intelligence.
+        </div>
+      </Header>
       <SearchContainer>
         <Selector label="Cloud Only?" options={["Yes", "No"]} />
         <Selector label="Open-Source" options={["Yes", "No"]} />

@@ -1,0 +1,216 @@
+- name: Label Studio
+  githubLink: https://github.com/heartexlabs/label-studio
+  isCloud: false
+  isOpenSource: true
+  installedToDesktop: false
+  canRunLocally: true
+  hasWebApp: true
+  openSourceLicense: Apache 2.0
+  canBeIntegrated: true
+  canImportDirectories: true
+  supportsImageUrls:
+  supportsVideo: true
+  supportsNER: true
+  supportsAudioTranscription: true
+  usesCSV: true
+  usesJSON: true
+  usesXML: false
+  collaboration: true
+- name: Universal Data Tool
+  githubLink: https://github.com/UniversalDataTool/universal-data-tool
+  isCloud: false
+  isOpenSource: true
+  installedToDesktop: true
+  canRunLocally: true
+  hasWebApp: true
+  openSourceLicense: MIT
+  canBeIntegrated: true
+  canImportDirectories: true
+  supportsImageUrls: true
+  supportsVideo: false
+  supportsNER: true
+  supportsAudioTranscription: true
+  usesCSV: true
+  usesJSON: true
+  usesXML: false
+  collaboration: false
+- name: Labelimg
+  githubLink: https://github.com/tzutalin/labelImg
+  isCloud: false
+  isOpenSource: true
+  installedToDesktop: true
+  canRunLocally: true
+  hasWebApp: true
+  openSourceLicense: MIT
+  canBeIntegrated:
+  canImportDirectories:
+  supportsImageUrls: true
+  supportsVideo: false
+  supportsNER: false
+  supportsAudioTranscription: false
+  usesCSV: false
+  usesJSON:
+  usesXML:
+  collaboration: false
+- name: LabelBox
+  githubLink: https://github.com/Labelbox/Labelbox
+  isCloud: true
+  isOpenSource: false
+  installedToDesktop: false
+  canRunLocally: false
+  hasWebApp: true
+  openSourceLicense:
+  canBeIntegrated:
+  canImportDirectories:
+  supportsImageUrls: true
+  supportsVideo: true
+  supportsNER: true
+  supportsAudioTranscription: false
+  usesCSV: false
+  usesJSON: true
+  usesXML: false
+  collaboration: true
+- name: Supervise.ly
+  githubLink: https://github.com/DeepSystems/supervisely-tutorials
+  isCloud: true
+  isOpenSource: false
+  installedToDesktop: false
+  canRunLocally: false
+  hasWebApp: true
+  openSourceLicense: MIT
+  canBeIntegrated: true
+  canImportDirectories:
+  supportsImageUrls:
+  supportsVideo: true
+  supportsNER: false
+  supportsAudioTranscription: false
+  usesCSV: false
+  usesJSON: true
+  usesXML: false
+  collaboration: true
+- name: labelme
+  githubLink: https://github.com/wkentaro/labelme
+  isCloud: false
+  isOpenSource: true
+  installedToDesktop: true
+  canRunLocally: true
+  hasWebApp: true
+  openSourceLicense: GPL-3.0
+  canBeIntegrated:
+  canImportDirectories:
+  supportsImageUrls: true
+  supportsVideo: true
+  supportsNER: false
+  supportsAudioTranscription: false
+  usesCSV:
+  usesJSON: true
+  usesXML:
+  collaboration:
+- name: VoTT
+  githubLink: https://github.com/microsoft/VoTT
+  isCloud: false
+  isOpenSource: true
+  installedToDesktop: true
+  canRunLocally: true
+  hasWebApp: true
+  openSourceLicense: MIT
+  canBeIntegrated:
+  canImportDirectories:
+  supportsImageUrls:
+  supportsVideo: true
+  supportsNER: false
+  supportsAudioTranscription: false
+  usesCSV: true
+  usesJSON: true
+  usesXML:
+  collaboration: false
+- name: makesense.ai
+  githubLink: https://github.com/SkalskiP/make-sense
+  isCloud: false
+  isOpenSource: true
+  installedToDesktop: true
+  canRunLocally: true
+  hasWebApp: true
+  openSourceLicense: GPL-3.0
+  canBeIntegrated:
+  canImportDirectories:
+  supportsImageUrls:
+  supportsVideo: false
+  supportsNER: false
+  supportsAudioTranscription: false
+  usesCSV: true
+  usesJSON: true
+  usesXML: true
+  collaboration:
+- name: brat
+  githubLink: https://github.com/nlplab/brat
+  isCloud: false
+  isOpenSource: true
+  installedToDesktop: true
+  canRunLocally: true
+  hasWebApp: true
+  openSourceLicense: MIT
+  canBeIntegrated: true
+  canImportDirectories:
+  supportsImageUrls: false
+  supportsVideo: false
+  supportsNER: true
+  supportsAudioTranscription: false
+  usesCSV: false
+  usesJSON:
+  usesXML:
+  collaboration: false
+- name: NeuroNER
+  githubLink: https://github.com/Franck-Dernoncourt/NeuroNER
+  isCloud: false
+  isOpenSource: true
+  installedToDesktop: true
+  canRunLocally: true
+  hasWebApp: false
+  openSourceLicense: MIT
+  canBeIntegrated:
+  canImportDirectories:
+  supportsImageUrls: false
+  supportsVideo: false
+  supportsNER: true
+  supportsAudioTranscription: false
+  usesCSV: false
+  usesJSON: false
+  usesXML:
+  collaboration: false
+- name: doccano
+  githubLink: https://github.com/doccano/doccano
+  isCloud: false
+  isOpenSource: true
+  installedToDesktop: false
+  canRunLocally: true
+  hasWebApp: true
+  openSourceLicense: MIT
+  canBeIntegrated:
+  canImportDirectories:
+  supportsImageUrls: false
+  supportsVideo: false
+  supportsNER: true
+  supportsAudioTranscription: false
+  usesCSV: true
+  usesJSON: true
+  usesXML: false
+  collaboration: true
+- name: CVAT
+  githubLink: https://github.com/opencv/cvat
+  isCloud: false
+  isOpenSource: true
+  installedToDesktop: false
+  canRunLocally: true
+  hasWebApp: true
+  openSourceLicense: MIT
+  canBeIntegrated: true
+  canImportDirectories:
+  supportsImageUrls:
+  supportsVideo: true
+  supportsNER: false
+  supportsAudioTranscription: false
+  usesCSV: false
+  usesJSON: false
+  usesXML: true
+  collaboration:
