@@ -8,6 +8,7 @@ import raw from "raw.macro"
 import yaml from "js-yaml"
 
 const data = yaml.load(raw("./data.yaml"))
+data.sort(() => (Math.random() > 0.5 ? 1 : -1))
 
 const Header = styled("div")({
   fontSize: 32,
@@ -46,9 +47,69 @@ const ResultsContainer = styled("div")({
   flexDirection: "column"
 })
 
+const checkAgainstFilters = filters => item => {
+  for (const filterKey of Object.keys(filters || {})) {
+    if (
+      filters[filterKey] === undefined ||
+      filters[filterKey] === null ||
+      filters[filterKey] === ""
+    )
+      continue
+    const filterValue = filters[filterKey]
+
+    switch (filterKey) {
+      case "cloudOnly": {
+        if (typeof item.cloudOnly !== "boolean") return false
+        const good = filterValue === "yes" ? item.cloudOnly : !item.cloudOnly
+        if (!good) return false
+        continue
+      }
+      case "isOpenSource": {
+        if (typeof item.isOpenSource !== "boolean") return false
+        const good =
+          filterValue === "yes" ? item.isOpenSource : !item.isOpenSource
+        if (!good) return false
+        continue
+      }
+      case "runsOn": {
+        if (filterValue === "desktop") {
+          if (item.installedToDesktop) continue
+        }
+        if (filterValue === "browser") {
+          if (item.hasWebApp) continue
+        }
+        return false
+      }
+    }
+  }
+  return true
+}
+
+const parseBrowserForFilter = () => {
+  const filters = {}
+  const terms = window.location.search
+    .slice(1)
+    .split("&")
+    .map(l => l.split("="))
+
+  for (const [key, value] of terms) {
+    filters[key] = value
+  }
+  return filters
+}
+
 export default () => {
-  const [filters, changeFilters] = useState()
-  console.log({ data })
+  const [filters, changeFilters] = useState(parseBrowserForFilter())
+  useEffect(() => {
+    const newSearch = Object.keys(filters)
+      .map(fkey => `${fkey}=${filters[fkey]}`)
+      .join("&")
+
+    const newURL = window.location.pathname + "?" + newSearch
+    if (window.location.search !== newSearch) {
+      window.history.pushState(document.title, document.title, newURL)
+    }
+  }, [filters])
   return (
     <div>
       <Header>
@@ -59,7 +120,7 @@ export default () => {
         </div>
       </Header>
       <SearchContainer>
-        <SelectorProvider onChange={changeFilters}>
+        <SelectorProvider initialValues={filters} onChange={changeFilters}>
           <Selector
             label="Cloud Only?"
             options={["Yes", "No"]}
@@ -93,7 +154,7 @@ export default () => {
         </SelectorProvider>
       </SearchContainer>
       <ResultsContainer>
-        {data.map(result => (
+        {data.filter(checkAgainstFilters(filters)).map(result => (
           <Result key={result.name} {...result} />
         ))}
       </ResultsContainer>

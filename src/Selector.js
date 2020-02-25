@@ -33,14 +33,17 @@ const useStyles = makeStyles(theme => ({
 
 const SelectorContext = createContext()
 
-export const SelectorProvider = ({ children, onChange }) => {
-  const [state, changeState] = useState({})
+export const SelectorProvider = ({ children, initialValues, onChange }) => {
+  const [state, changeState] = useState(initialValues)
   return (
     <SelectorContext.Provider
-      value={(key, value) => {
-        const newState = { ...state, [key]: value }
-        changeState(newState)
-        onChange(newState)
+      value={{
+        onChange: (key, value) => {
+          const newState = { ...state, [key]: value.toLowerCase() }
+          changeState(newState)
+          onChange(newState)
+        },
+        initialValues
       }}
     >
       {children}
@@ -51,12 +54,12 @@ export const SelectorProvider = ({ children, onChange }) => {
 export default ({ label, options, name }) => {
   const classes = useStyles()
   const inputLabel = useRef(null)
-  const onChangeValue = useContext(SelectorContext) || (() => null)
+  const { onChange: onChangeValue, initialValues } = useContext(SelectorContext)
   const [labelWidth, setLabelWidth] = useState(0)
   useEffect(() => {
     setLabelWidth(inputLabel.current.offsetWidth)
   }, [])
-  const [val, changeVal] = useState("")
+  const [val, changeVal] = useState(initialValues[name] || "")
   return (
     <FormControl variant="outlined" className={classes.formControl}>
       <InputLabel ref={inputLabel} id={label + "-label"}>

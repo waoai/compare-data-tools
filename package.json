@@ -1,6 +1,7 @@
 {
   "name": "compare-data-tools",
   "version": "0.1.0",
+  "homepage": "/compare-data-tools",
   "dependencies": {
     "@material-ui/core": "^4.9.3",
     "@material-ui/icons": "^4.9.1",
@@ -17,7 +18,8 @@
     "dev": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "gh-pages": "npm run build && gh-pages -d build"
   },
   "browserslist": [
     ">0.2%",

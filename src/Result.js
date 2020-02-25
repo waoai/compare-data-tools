@@ -10,21 +10,29 @@ import Divider from "@material-ui/core/Divider"
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 
-const Container = styled("div")({
+const Container = styled("div")(({ theme }) => ({
   display: "flex",
-  maxWidth: 800,
+  maxWidth: 1000,
   width: "100%",
   margin: 20,
   border: `1px solid ${colors.grey[400]}`,
   boxShadow: "0px 3px 5px rgba(0,0,0,0.1)",
-  borderRadius: 4
-})
+  borderRadius: 4,
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column"
+  }
+}))
 
-const LeftBlock = styled("div")({
+const LeftBlock = styled("div")(({ theme }) => ({
   width: 300,
   padding: 16,
-  flexShrink: 0
-})
+  flexShrink: 0,
+  display: "flex",
+  flexDirection: "column",
+  [theme.breakpoints.down("sm")]: {
+    width: "initial"
+  }
+}))
 
 const RightBlock = styled("div")({
   flexGrow: 1,
@@ -32,9 +40,22 @@ const RightBlock = styled("div")({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  "& .thumbs-wrapper": { marginTop: 8, marginBottom: 0 },
+  "& .thumbs-wrapper.axis-vertical": { marginTop: 8, marginBottom: 0 },
+  "& .thumbs": { marginTop: 0, marginBottom: 0 },
   "& .thumb": {
-    maxHeight: 50,
     cursor: "pointer"
+  },
+  "& .thumb img": {
+    maxHeight: 25,
+    objectFit: "cover",
+    border: `1px solid ${colors.grey[500]}`
+  },
+  "& img": {
+    maxHeight: 400,
+    backgroundColor: "#fff",
+    objectFit: "cover",
+    border: `1px solid ${colors.grey[500]}`
   }
 })
 
@@ -51,7 +72,8 @@ const TagContainer = styled("div")({
 
 const DescriptionContainer = styled("div")({
   paddingTop: 16,
-  paddingBottom: 16
+  paddingBottom: 16,
+  flexGrow: 1
 })
 
 const Tag = styled("div")({
@@ -148,32 +170,12 @@ export default ({
       </LeftBlock>
       <RightBlock>
         {screenshots.length > 0 ? (
-          <Carousel showArrows={true}>
+          <Carousel showArrows={true} showStatus={false} showIndicators={false}>
             {screenshots.map(src => (
               <div key={src}>
-                <img
-                  style={{
-                    maxHeight: 250,
-                    backgroundColor: "#fff",
-                    objectFit: "cover",
-                    border: `1px solid ${colors.grey[800]}`
-                  }}
-                  src={src}
-                />
+                <img src={src} />
               </div>
             ))}
-            {/* <div>
-              <img src="https://via.placeholder.com/250?text=1" />
-            </div>
-            <div>
-              <img src="https://via.placeholder.com/250?text=2" />
-            </div>
-            <div>
-              <img src="https://via.placeholder.com/250?text=3" />
-            </div>
-            <div>
-              <img src="https://via.placeholder.com/250?text=4" />
-            </div> */}
           </Carousel>
         ) : (
           <NoScreenshots>No Screenshots Yet!</NoScreenshots>
