@@ -7,6 +7,8 @@ import Button from "@material-ui/core/Button"
 import { GoMarkGithub } from "react-icons/go"
 import OpenInNewIcon from "@material-ui/icons/OpenInNew"
 import Divider from "@material-ui/core/Divider"
+import { Carousel } from "react-responsive-carousel"
+import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 const Container = styled("div")({
   display: "flex",
@@ -20,11 +22,20 @@ const Container = styled("div")({
 
 const LeftBlock = styled("div")({
   width: 300,
-  padding: 16
+  padding: 16,
+  flexShrink: 0
 })
 
 const RightBlock = styled("div")({
-  flexGrow: 1
+  flexGrow: 1,
+  padding: 16,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  "& .thumb": {
+    maxHeight: 50,
+    cursor: "pointer"
+  }
 })
 
 const Title = styled("div")({
@@ -54,16 +65,22 @@ const Tag = styled("div")({
   borderRadius: 4
 })
 
+const NoScreenshots = styled("div")({
+  fontSize: 18,
+  fontWeight: "bold",
+  color: colors.grey[500]
+})
+
 export default ({
-  title,
+  name,
   useLink,
   githubLink,
-  isCloud,
+  cloudOnly,
   isOpenSource,
-  isDesktopApp,
-  isWebApp,
+  installedToDesktop,
+  hasWebApp,
   license = "MIT",
-  isLibrary,
+  canBeIntegrated,
   collaboration,
   xml,
   json,
@@ -72,19 +89,20 @@ export default ({
   supportsNER,
   supportsVideo,
   supportsImageURLs,
-  supportsDirectoryImport
+  supportsDirectoryImport,
+  screenshots
 }) => {
   const tags = [
-    isCloud && { label: "cloud", color: colors.purple[500] },
-    isWebApp && { label: "web", color: colors.blue[500] },
-    isDesktopApp && { label: "desktop", color: colors.cyan[500] },
-    isLibrary && { label: "library", color: colors.orange[600] },
+    cloudOnly && { label: "cloud", color: colors.purple[500] },
+    hasWebApp && { label: "web", color: colors.blue[500] },
+    installedToDesktop && { label: "desktop", color: colors.cyan[500] },
+    canBeIntegrated && { label: "library", color: colors.orange[600] },
     isOpenSource && { label: "open-source", color: colors.green[500] }
   ].filter(Boolean)
   return (
     <Container>
       <LeftBlock>
-        <Title>{title}</Title>
+        <Title>{name}</Title>
         <TagContainer>
           {tags.map(({ label, color }) => (
             <Tag style={{ backgroundColor: color }}>{label}</Tag>
@@ -107,7 +125,7 @@ export default ({
             variant="outlined"
           >
             <OpenInNewIcon style={{ marginRight: 8, width: 14, height: 14 }} />
-            {title}
+            {name}
           </Button>
         )}
         {isOpenSource && (
@@ -124,11 +142,43 @@ export default ({
             variant="outlined"
           >
             <GoMarkGithub style={{ marginRight: 8, width: 14, height: 14 }} />
-            {title}
+            {name}
           </Button>
         )}
       </LeftBlock>
-      <RightBlock>asd</RightBlock>
+      <RightBlock>
+        {screenshots.length > 0 ? (
+          <Carousel showArrows={true}>
+            {screenshots.map(src => (
+              <div key={src}>
+                <img
+                  style={{
+                    maxHeight: 250,
+                    backgroundColor: "#fff",
+                    objectFit: "cover",
+                    border: `1px solid ${colors.grey[800]}`
+                  }}
+                  src={src}
+                />
+              </div>
+            ))}
+            {/* <div>
+              <img src="https://via.placeholder.com/250?text=1" />
+            </div>
+            <div>
+              <img src="https://via.placeholder.com/250?text=2" />
+            </div>
+            <div>
+              <img src="https://via.placeholder.com/250?text=3" />
+            </div>
+            <div>
+              <img src="https://via.placeholder.com/250?text=4" />
+            </div> */}
+          </Carousel>
+        ) : (
+          <NoScreenshots>No Screenshots Yet!</NoScreenshots>
+        )}
+      </RightBlock>
     </Container>
   )
 }

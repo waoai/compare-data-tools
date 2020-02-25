@@ -1,6 +1,12 @@
 // @flow
 
-import React, { useState, useEffect, useRef } from "react"
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  createContext,
+  useContext
+} from "react"
 import { styled, makeStyles } from "@material-ui/core/styles"
 import * as colors from "@material-ui/core/colors"
 import Select from "@material-ui/core/Select"
@@ -25,9 +31,27 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default ({ label, options }) => {
+const SelectorContext = createContext()
+
+export const SelectorProvider = ({ children, onChange }) => {
+  const [state, changeState] = useState({})
+  return (
+    <SelectorContext.Provider
+      value={(key, value) => {
+        const newState = { ...state, [key]: value }
+        changeState(newState)
+        onChange(newState)
+      }}
+    >
+      {children}
+    </SelectorContext.Provider>
+  )
+}
+
+export default ({ label, options, name }) => {
   const classes = useStyles()
   const inputLabel = useRef(null)
+  const onChangeValue = useContext(SelectorContext) || (() => null)
   const [labelWidth, setLabelWidth] = useState(0)
   useEffect(() => {
     setLabelWidth(inputLabel.current.offsetWidth)
@@ -42,7 +66,10 @@ export default ({ label, options }) => {
         labelId={label + "-label"}
         id={label + "-select"}
         value={val}
-        onChange={e => changeVal(e.target.value)}
+        onChange={e => {
+          changeVal(e.target.value)
+          onChangeValue(name, e.target.value)
+        }}
         labelWidth={labelWidth}
         className={classes.select}
       >

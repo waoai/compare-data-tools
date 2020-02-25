@@ -1,6 +1,8 @@
 - name: Label Studio
+  description: A complete solution for your training data problem with fast labeling tools, human workforce, data management, a powerful API and automation features.
+  useLink: https://labelbox.com
   githubLink: https://github.com/heartexlabs/label-studio
-  isCloud: false
+  cloudOnly: false
   isOpenSource: true
   installedToDesktop: false
   canRunLocally: true
@@ -16,9 +18,14 @@
   usesJSON: true
   usesXML: false
   collaboration: true
+  screenshots:
+    - https://user-images.githubusercontent.com/59834878/75191172-d5281d00-571f-11ea-8846-b06803a9c9d1.gif
+    - https://user-images.githubusercontent.com/59834878/75191243-f426af00-571f-11ea-8398-e87c74930340.gif
 - name: Universal Data Tool
+  description: Label any type of data, images, text, or documents, in an easy web interface or desktop app.
   githubLink: https://github.com/UniversalDataTool/universal-data-tool
-  isCloud: false
+  useLink: https://universaldatatool.com
+  cloudOnly: false
   isOpenSource: true
   installedToDesktop: true
   canRunLocally: true
@@ -34,9 +41,13 @@
   usesJSON: true
   usesXML: false
   collaboration: false
+  screenshots:
+    - https://wao.ai/blog/static/label-hand-b5d242c74d4a8acd8f40c32ae108600c.png
+    - https://wao.ai/blog/static/computer-vision-configure-baea61bbdc1f3d1cdc2a3393d9402ec2.png
+    - https://wao.ai/blog/static/some-samples-completed-cbd9a8bd92e6ecf8a0d192ffc49c9759.png
 - name: Labelimg
   githubLink: https://github.com/tzutalin/labelImg
-  isCloud: false
+  cloudOnly: false
   isOpenSource: true
   installedToDesktop: true
   canRunLocally: true
@@ -52,9 +63,12 @@
   usesJSON:
   usesXML:
   collaboration: false
+  screenshots:
+    - https://user-images.githubusercontent.com/59834878/75195156-68b11c00-5727-11ea-8147-2cd6c759e0ed.jpg
+    - https://user-images.githubusercontent.com/59834878/75195157-69e24900-5727-11ea-9ac7-3bcee725a6c5.jpg
 - name: LabelBox
   githubLink: https://github.com/Labelbox/Labelbox
-  isCloud: true
+  cloudOnly: true
   isOpenSource: false
   installedToDesktop: false
   canRunLocally: false
@@ -70,15 +84,18 @@
   usesJSON: true
   usesXML: false
   collaboration: true
+  screenshots:
+    - https://user-images.githubusercontent.com/59834878/75195108-533bf200-5727-11ea-9199-1ec9dbe54da4.png
+    - https://user-images.githubusercontent.com/59834878/75195114-559e4c00-5727-11ea-97cf-5b1c269e5d37.jpeg
+    - https://user-images.githubusercontent.com/59834878/75195121-57680f80-5727-11ea-8aae-d0b5b945ec33.png
 - name: Supervise.ly
-  githubLink: https://github.com/DeepSystems/supervisely-tutorials
-  isCloud: true
+  cloudOnly: true
   isOpenSource: false
   installedToDesktop: false
   canRunLocally: false
   hasWebApp: true
-  openSourceLicense: MIT
-  canBeIntegrated: true
+  openSourceLicense:
+  canBeIntegrated: false
   canImportDirectories:
   supportsImageUrls:
   supportsVideo: true
@@ -88,9 +105,12 @@
   usesJSON: true
   usesXML: false
   collaboration: true
+  screenshots:
+    - https://user-images.githubusercontent.com/59834878/75195934-ea557980-5728-11ea-81f9-0ebc5de162c4.jpg
+    - https://user-images.githubusercontent.com/59834878/75195937-ec1f3d00-5728-11ea-8da6-7c12e9275083.jpg
 - name: labelme
   githubLink: https://github.com/wkentaro/labelme
-  isCloud: false
+  cloudOnly: false
   isOpenSource: true
   installedToDesktop: true
   canRunLocally: true
@@ -106,9 +126,12 @@
   usesJSON: true
   usesXML:
   collaboration:
+  screenshots:
+    - https://user-images.githubusercontent.com/59834878/75195200-7ff00980-5727-11ea-85c2-4b99edf23535.jpg
+    - https://user-images.githubusercontent.com/59834878/75195205-81213680-5727-11ea-8277-1c0d703718b8.jpg
 - name: VoTT
   githubLink: https://github.com/microsoft/VoTT
-  isCloud: false
+  cloudOnly: false
   isOpenSource: true
   installedToDesktop: true
   canRunLocally: true
@@ -124,9 +147,12 @@
   usesJSON: true
   usesXML:
   collaboration: false
+  screenshots:
+    - https://user-images.githubusercontent.com/59834878/75195277-a2822280-5727-11ea-9d0b-2db3337da7be.jpg
+    - https://user-images.githubusercontent.com/59834878/75195281-a3b34f80-5727-11ea-8583-16f94aa6a21c.jpg
 - name: makesense.ai
   githubLink: https://github.com/SkalskiP/make-sense
-  isCloud: false
+  cloudOnly: false
   isOpenSource: true
   installedToDesktop: true
   canRunLocally: true
@@ -142,9 +168,13 @@
   usesJSON: true
   usesXML: true
   collaboration:
+  screenshots:
+    - https://user-images.githubusercontent.com/59834878/75195883-d6aa1300-5728-11ea-8813-a9c78d8d7b3a.gif
+    - https://user-images.githubusercontent.com/59834878/75195884-d7db4000-5728-11ea-8c3f-f6a3458c7d4a.gif
+    - https://user-images.githubusercontent.com/59834878/75195890-d90c6d00-5728-11ea-9d7f-2a957b928cc8.gif
 - name: brat
   githubLink: https://github.com/nlplab/brat
-  isCloud: false
+  cloudOnly: false
   isOpenSource: true
   installedToDesktop: true
   canRunLocally: true
@@ -160,9 +190,10 @@
   usesJSON:
   usesXML:
   collaboration: false
+  screenshots: []
 - name: NeuroNER
   githubLink: https://github.com/Franck-Dernoncourt/NeuroNER
-  isCloud: false
+  cloudOnly: false
   isOpenSource: true
   installedToDesktop: true
   canRunLocally: true
@@ -178,9 +209,10 @@
   usesJSON: false
   usesXML:
   collaboration: false
+  screenshots: []
 - name: doccano
   githubLink: https://github.com/doccano/doccano
-  isCloud: false
+  cloudOnly: false
   isOpenSource: true
   installedToDesktop: false
   canRunLocally: true
@@ -196,9 +228,14 @@
   usesJSON: true
   usesXML: false
   collaboration: true
+  screenshots:
+    - https://user-images.githubusercontent.com/59834878/75190788-17049380-571f-11ea-9351-af4962600518.gif
+    - https://user-images.githubusercontent.com/59834878/75190842-2e438100-571f-11ea-8895-02b640c264bc.gif
+    - https://user-images.githubusercontent.com/59834878/75190846-2f74ae00-571f-11ea-8852-2186ccb91c0a.gif
+    - https://user-images.githubusercontent.com/59834878/75190848-30a5db00-571f-11ea-9fa7-3bda82d1784d.gif
 - name: CVAT
   githubLink: https://github.com/opencv/cvat
-  isCloud: false
+  cloudOnly: false
   isOpenSource: true
   installedToDesktop: false
   canRunLocally: true
@@ -214,3 +251,4 @@
   usesJSON: false
   usesXML: true
   collaboration:
+  screenshots: []
