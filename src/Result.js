@@ -145,6 +145,7 @@ export default ({
               marginBottom: 8
             }}
             variant="outlined"
+            href={useLink}
           >
             <OpenInNewIcon style={{ marginRight: 8, width: 14, height: 14 }} />
             {name}
@@ -161,6 +162,7 @@ export default ({
               color: "#fff",
               marginBottom: 8
             }}
+            href={githubLink}
             variant="outlined"
           >
             <GoMarkGithub style={{ marginRight: 8, width: 14, height: 14 }} />

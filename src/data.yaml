@@ -42,10 +42,12 @@
   usesXML: false
   collaboration: false
   screenshots:
+    - https://user-images.githubusercontent.com/1910070/75292653-99aa5300-57f2-11ea-976c-1e0699c96d7d.png
     - https://wao.ai/blog/static/label-hand-b5d242c74d4a8acd8f40c32ae108600c.png
     - https://wao.ai/blog/static/computer-vision-configure-baea61bbdc1f3d1cdc2a3393d9402ec2.png
     - https://wao.ai/blog/static/some-samples-completed-cbd9a8bd92e6ecf8a0d192ffc49c9759.png
 - name: Labelimg
+  description: LabelImg is a graphical image annotation tool. Annotations are saved as XML files in PASCAL VOC format, the format used by ImageNet. Besides, it also supports YOLO format.
   githubLink: https://github.com/tzutalin/labelImg
   cloudOnly: false
   isOpenSource: true
@@ -67,7 +69,8 @@
     - https://user-images.githubusercontent.com/59834878/75195156-68b11c00-5727-11ea-8147-2cd6c759e0ed.jpg
     - https://user-images.githubusercontent.com/59834878/75195157-69e24900-5727-11ea-9ac7-3bcee725a6c5.jpg
 - name: LabelBox
-  githubLink: https://github.com/Labelbox/Labelbox
+  description: A complete solution for your training data problem with fast labeling tools, human workforce, data management, a powerful API and automation features.
+  useLink: https://labelbox.com
   cloudOnly: true
   isOpenSource: false
   installedToDesktop: false
@@ -89,6 +92,8 @@
     - https://user-images.githubusercontent.com/59834878/75195114-559e4c00-5727-11ea-97cf-5b1c269e5d37.jpeg
     - https://user-images.githubusercontent.com/59834878/75195121-57680f80-5727-11ea-8aae-d0b5b945ec33.png
 - name: Supervise.ly
+  useLink: supervise.ly
+  description: Iterate from image annotation to accurate neural networks 10x faster.
   cloudOnly: true
   isOpenSource: false
   installedToDesktop: false
@@ -110,6 +115,7 @@
     - https://user-images.githubusercontent.com/59834878/75195937-ec1f3d00-5728-11ea-8da6-7c12e9275083.jpg
 - name: labelme
   githubLink: https://github.com/wkentaro/labelme
+  description: Image Polygonal Annotation with Python (polygon, rectangle, circle, line, point and image-level flag annotation).
   cloudOnly: false
   isOpenSource: true
   installedToDesktop: true
@@ -131,6 +137,7 @@
     - https://user-images.githubusercontent.com/59834878/75195205-81213680-5727-11ea-8277-1c0d703718b8.jpg
 - name: VoTT
   githubLink: https://github.com/microsoft/VoTT
+  description: An electron app for building end to end Object Detection Models from Images and Videos.
   cloudOnly: false
   isOpenSource: true
   installedToDesktop: true
@@ -152,6 +159,8 @@
     - https://user-images.githubusercontent.com/59834878/75195281-a3b34f80-5727-11ea-8583-16f94aa6a21c.jpg
 - name: makesense.ai
   githubLink: https://github.com/SkalskiP/make-sense
+  useLink: https://www.makesense.ai
+  description: Free to use online tool for labelling photos.
   cloudOnly: false
   isOpenSource: true
   installedToDesktop: true
@@ -174,6 +183,7 @@
     - https://user-images.githubusercontent.com/59834878/75195890-d90c6d00-5728-11ea-9d7f-2a957b928cc8.gif
 - name: brat
   githubLink: https://github.com/nlplab/brat
+  description: brat rapid annotation tool (brat) - for all your textual annotation needs. brat aims to provide an intuitive and fast way to create text-bound and relational annotations.
   cloudOnly: false
   isOpenSource: true
   installedToDesktop: true
@@ -193,6 +203,7 @@
   screenshots: []
 - name: NeuroNER
   githubLink: https://github.com/Franck-Dernoncourt/NeuroNER
+  description: NeuroNER is a program that performs NER. NeuroNER leverages the state-of-the-art prediction capabilities of neural networks (a.k.a. "deep learning") and enables the users to create or modify annotations for a new or existing corpus.
   cloudOnly: false
   isOpenSource: true
   installedToDesktop: true
@@ -211,6 +222,7 @@
   collaboration: false
   screenshots: []
 - name: doccano
+  description: doccano is an open source text annotation tool for humans. It provides annotation features for text classification, sequence labeling and sequence to sequence tasks. So, you can create labeled data for sentiment analysis, named entity recognition, text summarization and so on.
   githubLink: https://github.com/doccano/doccano
   cloudOnly: false
   isOpenSource: true
@@ -235,6 +247,7 @@
     - https://user-images.githubusercontent.com/59834878/75190848-30a5db00-571f-11ea-9fa7-3bda82d1784d.gif
 - name: CVAT
   githubLink: https://github.com/opencv/cvat
+  description: CVAT is free, online, interactive video and image annotation tool for computer vision. It is being used by our team to annotate million of objects with different properties. Many UI and UX decisions are based on feedbacks from professional data annotation team.
   cloudOnly: false
   isOpenSource: true
   installedToDesktop: false

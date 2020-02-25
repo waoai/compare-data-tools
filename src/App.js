@@ -102,11 +102,13 @@ export default () => {
   const [filters, changeFilters] = useState(parseBrowserForFilter())
   useEffect(() => {
     const newSearch = Object.keys(filters)
+      .filter(Boolean)
+      .filter(fkey => filters[fkey] !== undefined)
       .map(fkey => `${fkey}=${filters[fkey]}`)
       .join("&")
 
     const newURL = window.location.pathname + "?" + newSearch
-    if (window.location.search !== newSearch) {
+    if (window.location.search !== newSearch && newSearch.length > 1) {
       window.history.pushState(document.title, document.title, newURL)
     }
   }, [filters])
