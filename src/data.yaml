@@ -11,6 +11,9 @@
   canBeIntegrated: true
   canImportDirectories: true
   supportsImageUrls:
+  supportsImages: true
+  supportsAudio: true
+  supportsPDFs: false
   supportsVideo: true
   supportsNER: true
   supportsAudioTranscription: true
@@ -33,6 +36,9 @@
   openSourceLicense: MIT
   canBeIntegrated: true
   canImportDirectories: true
+  supportsImages: true
+  supportsAudio: true
+  supportsPDFs: true
   supportsImageUrls: true
   supportsVideo: false
   supportsNER: true
@@ -58,6 +64,9 @@
   canBeIntegrated:
   canImportDirectories:
   supportsImageUrls: true
+  supportsImages: true
+  supportsAudio: false
+  supportsPDFs: false
   supportsVideo: false
   supportsNER: false
   supportsAudioTranscription: false
@@ -80,8 +89,11 @@
   canBeIntegrated:
   canImportDirectories:
   supportsImageUrls: true
+  supportsImages: true
+  supportsAudio: false
+  supportsPDFs: false
   supportsVideo: true
-  supportsNER: true
+  supportsNER: false
   supportsAudioTranscription: false
   usesCSV: false
   usesJSON: true
@@ -103,6 +115,9 @@
   canBeIntegrated: false
   canImportDirectories:
   supportsImageUrls:
+  supportsImages: true
+  supportsAudio: false
+  supportsPDFs: false
   supportsVideo: true
   supportsNER: false
   supportsAudioTranscription: false
@@ -125,7 +140,10 @@
   canBeIntegrated:
   canImportDirectories:
   supportsImageUrls: true
-  supportsVideo: true
+  supportsImages: true
+  supportsAudio: false
+  supportsPDFs: false
+  supportsVideo: false
   supportsNER: false
   supportsAudioTranscription: false
   usesCSV:
@@ -147,7 +165,10 @@
   canBeIntegrated:
   canImportDirectories:
   supportsImageUrls:
-  supportsVideo: true
+  supportsImages: true
+  supportsAudio: false
+  supportsPDFs: false
+  supportsVideo: false
   supportsNER: false
   supportsAudioTranscription: false
   usesCSV: true
@@ -170,6 +191,9 @@
   canBeIntegrated:
   canImportDirectories:
   supportsImageUrls:
+  supportsImages: true
+  supportsAudio: false
+  supportsPDFs: false
   supportsVideo: false
   supportsNER: false
   supportsAudioTranscription: false
@@ -192,6 +216,9 @@
   openSourceLicense: MIT
   canBeIntegrated: true
   canImportDirectories:
+  supportsImages: false
+  supportsAudio: false
+  supportsPDFs: false
   supportsImageUrls: false
   supportsVideo: false
   supportsNER: true
@@ -212,6 +239,9 @@
   openSourceLicense: MIT
   canBeIntegrated:
   canImportDirectories:
+  supportsImages: false
+  supportsAudio: false
+  supportsPDFs: false
   supportsImageUrls: false
   supportsVideo: false
   supportsNER: true
@@ -232,6 +262,9 @@
   openSourceLicense: MIT
   canBeIntegrated:
   canImportDirectories:
+  supportsImages: false
+  supportsAudio: false
+  supportsPDFs: false
   supportsImageUrls: false
   supportsVideo: false
   supportsNER: true
@@ -257,6 +290,9 @@
   canBeIntegrated: true
   canImportDirectories:
   supportsImageUrls:
+  supportsImages: true
+  supportsAudio: false
+  supportsPDFs: false
   supportsVideo: true
   supportsNER: false
   supportsAudioTranscription: false

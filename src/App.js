@@ -80,6 +80,20 @@ const checkAgainstFilters = filters => item => {
         }
         return false
       }
+      case "dataType": {
+        if (filterValue === "images") {
+          if (item.supportsImages) continue
+        } else if (filterValue === "pdfs") {
+          if (item.supportsPDFs) continue
+        } else if (filterValue === "video") {
+          if (item.supportsVideo) continue
+        } else if (filterValue === "audio") {
+          if (item.supportsAudio) continue
+        } else if (filterValue === "text") {
+          if (item.supportsNER) continue
+        }
+        return false
+      }
     }
   }
   return true
@@ -140,10 +154,10 @@ export default () => {
           />
           <Selector
             label="Data Types"
-            options={["Images", "PDFs", "Video", "Audio"]}
-            name="dataTypes"
+            options={["Images", "PDFs", "Video", "Audio", "Text"]}
+            name="dataType"
           />
-          <Selector
+          {/* <Selector
             label="Input/Output"
             options={["CSV", "JSON", "XML"]}
             name="fileFormat"
@@ -152,7 +166,7 @@ export default () => {
             label="Collaboration"
             options={["Yes", "No"]}
             name="supportsCollaboration"
-          />
+          /> */}
         </SelectorProvider>
       </SearchContainer>
       <ResultsContainer>
